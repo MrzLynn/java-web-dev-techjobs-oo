@@ -36,11 +36,20 @@ public class JobTest {
     }
     @Test
     public void toStringWorks() {
-        assertFalse("",false);
+        assertTrue(job4.toString() instanceof String);
     }
 
     @Test
     public void stringBeginsWithSpace(){
-        assertTrue(" ", true);
+        String testingToString = job7.toString();
+        char firstCharacter = testingToString.charAt(0);
+        assertEquals('\n', firstCharacter);
+    }
+
+    @Test
+    public void stringEndsWithSpace(){
+        String testingToString = job7.toString();
+        char lastCharacter = testingToString.charAt(testingToString.length() - 1);
+        assertEquals('\n', lastCharacter);
     }
 }
