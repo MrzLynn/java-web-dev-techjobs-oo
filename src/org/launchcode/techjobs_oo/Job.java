@@ -92,15 +92,15 @@ public class Job {
     @Override
     public String toString() {
         String[] jobOutput = {this.name, String.valueOf(this.location), String.valueOf(this.employer), String.valueOf(this.positionType), String.valueOf(this.coreCompetency)};
-//        for (int i = 0; i < jobOutput.length; i++) {
-//            if (jobOutput[i].equals(""))
-//                jobOutput[i] = "Data Not Available";
-//        }
-      return ("\nID: " + id +
-              "Name: " + name +
-              "Employer: " + employer +
-              "Location: " + location +
-              "Position Type: " + positionType +
+        for (int i = 0; i < jobOutput.length; i++) {
+            if (jobOutput[i].equals(""))
+                jobOutput[i] = "Data Not Available";
+        }
+      return ("\nID: " + id + "\n" +
+              "Name: " + name + "\n" +
+              "Employer: " + employer + "\n" +
+              "Location: " + location + "\n" +
+              "Position Type: " + positionType + "\n" +
               "Core Competency: " + coreCompetency + "\n");
     }
 

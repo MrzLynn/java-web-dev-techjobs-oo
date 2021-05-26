@@ -1,12 +1,18 @@
 package org.launchcode.techjobs_oo;
 
+import org.launchcode.techjobs_oo.Tests.JobTest;
+
+
 import java.util.Objects;
 
-public abstract class JobField {
+public abstract class JobField extends Job {
     private int id;
     private static int nextId = 1;
     private String value;
 
+    public JobField(String name, Employer employer, Location location, PositionType positionType,CoreCompetency coreCompetency){
+        super(name, employer, location, positionType, coreCompetency);
+    }
 
     public JobField() {
         id = nextId;
@@ -32,10 +38,7 @@ public abstract class JobField {
 
     @Override
     public String toString() {
-        return "JobField{" +
-                "id=" + id +
-                ", value='" + value + '\'' +
-                '}';
+        return "" + id;
     }
 
     @Override
@@ -50,4 +53,5 @@ public abstract class JobField {
     public int hashCode() {
         return Objects.hash(id, value);
     }
+
 }
