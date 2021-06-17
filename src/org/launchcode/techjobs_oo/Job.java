@@ -22,6 +22,7 @@ public class Job {
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType,CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -98,10 +99,10 @@ public class Job {
         }
       return ("\nID: " + id + "\n" +
               "Name: " + name + "\n" +
-              "Employer: " + employer + "\n" +
-              "Location: " + location + "\n" +
-              "Position Type: " + positionType + "\n" +
-              "Core Competency: " + coreCompetency + "\n");
+              "Employer: " + employer.getValue() + "\n" +
+              "Location: " + location.getValue() + "\n" +
+              "Position Type: " + positionType.getValue() + "\n" +
+              "Core Competency: " + coreCompetency.getValue() + "\n");
     }
 
 
