@@ -92,10 +92,25 @@ public class Job {
 
     @Override
     public String toString() {
-        String[] jobOutput = {this.name, String.valueOf(this.location), String.valueOf(this.employer), String.valueOf(this.positionType), String.valueOf(this.coreCompetency)};
-        for (int i = 0; i < jobOutput.length; i++) {
-            if (jobOutput[i].equals(""))
-                jobOutput[i] = "Data Not Available";
+        String ifFieldEmpty = "Data not available";
+        if(this.name == null || this.name == "") {
+            this.name = ifFieldEmpty;
+        }
+        if(this.employer == null || this.employer.value == "") {
+            Employer nullValue = new Employer(ifFieldEmpty);
+            this.employer = nullValue;
+        }
+        if(this.location == null || this.location.value == "") {
+            Location nullValue = new Location(ifFieldEmpty);
+            this.location = nullValue;
+        }
+        if(positionType == null || this.positionType.value == "") {
+            PositionType nullValue = new PositionType(ifFieldEmpty);
+            this.positionType = nullValue;
+        }
+        if(coreCompetency == null || this.coreCompetency.value == ""){
+            CoreCompetency nullValue = new CoreCompetency(ifFieldEmpty);
+            this.coreCompetency = nullValue;
         }
       return ("\nID: " + id + "\n" +
               "Name: " + name + "\n" +
@@ -104,6 +119,8 @@ public class Job {
               "Position Type: " + positionType.getValue() + "\n" +
               "Core Competency: " + coreCompetency.getValue() + "\n");
     }
-
+    public String getName(String product_tester){
+        return name;
+    }
 
 }

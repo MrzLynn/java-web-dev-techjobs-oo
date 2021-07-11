@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo.Tests;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
@@ -7,7 +8,7 @@ import org.launchcode.techjobs_oo.*;
 import static org.junit.Assert.*;
 
 public class JobTest {
-    private Job job4,job5,job6,job7,job8;
+    private Job job4,job5,job6,job7,job8,job9;
 
     @Before
     public void settingUpTest (){
@@ -16,7 +17,9 @@ public class JobTest {
         job6 = new Job("Front End Web", new Employer("LaunchCode"), new Location("Saint Louis"), new PositionType("Entry Level"), new CoreCompetency("Persistence"));
         job7 = new Job("Back End Web", new Employer("Visa"), new Location("Atlantis"), new PositionType("Intermediate"), new CoreCompetency("Novice"));
         job8 = new Job("Back End Web", new Employer("Visa"), new Location("Atlantis"), new PositionType("Intermediate"), new CoreCompetency("Novice"));
+        job9 = new Job("Front End Web", new Employer("LaunchCode"), new Location(""), new PositionType("Entry Level"), new CoreCompetency("Persistence"));
     }
+
 
     @Test
     public void testSettingJobId (){
@@ -52,4 +55,12 @@ public class JobTest {
         char lastCharacter = testingToString.charAt(testingToString.length() - 1);
         assertEquals('\n', lastCharacter);
     }
+
+    @Test
+    public void testToStringMethod(){
+    Assert.assertNotEquals("ID: 1\n" + "Name: Front End Web\n" + "Employer: LaunchCode\n" + "Location: Saint Louis\n" + "Position Type: Entry Level\n" + "Core Competency: Persistence\n", job6.toString());
+    Assert.assertEquals("\nID: 7\n" + "Name: Front End Web\n" + "Employer: LaunchCode\n" + "Location: Saint Louis\n" + "Position Type: Entry Level\n" + "Core Competency: Persistence\n", job6.toString());
+    Assert.assertEquals("\nID: 22\n" + "Name: Front End Web\n" + "Employer: LaunchCode\n" + "Location: Data not available\n" + "Position Type: Entry Level\n" + "Core Competency: Persistence\n", job9.toString());
+    }
+
 }

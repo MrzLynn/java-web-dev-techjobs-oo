@@ -1,6 +1,6 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.Objects;
+
 
 public class Location extends JobField {
 
@@ -8,6 +8,7 @@ public class Location extends JobField {
     //  constructor should also call the empty constructor in order to initialize the 'id' field.
     public Location(String value) {
         super(value);
+
 
     }
 

@@ -8,7 +8,7 @@ import java.util.Objects;
 public abstract class JobField extends Job {
     private int id;
     private static int nextId = 1;
-    private String value;
+    public String value;
 
     public JobField(String name, Employer employer, Location location, PositionType positionType,CoreCompetency coreCompetency){
         super(name, employer, location, positionType, coreCompetency);
@@ -38,7 +38,7 @@ public abstract class JobField extends Job {
 
     @Override
     public String toString() {
-        return "" + id;
+        return value;
     }
 
     @Override
