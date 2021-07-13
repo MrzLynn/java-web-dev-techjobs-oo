@@ -13,7 +13,7 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
+    // DONE: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
     public Job() {
@@ -30,7 +30,7 @@ public class Job {
         this.coreCompetency = coreCompetency;
 
     }
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+    // DONE: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     public String getName() {
         return name;
@@ -118,9 +118,6 @@ public class Job {
               "Location: " + location.getValue() + "\n" +
               "Position Type: " + positionType.getValue() + "\n" +
               "Core Competency: " + coreCompetency.getValue() + "\n");
-    }
-    public String getName(String product_tester){
-        return name;
     }
 
 }
