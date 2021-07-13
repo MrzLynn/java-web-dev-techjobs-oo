@@ -58,9 +58,13 @@ public class JobTest {
 
     @Test
     public void testToStringMethod(){
-    Assert.assertNotEquals("ID: 1\n" + "Name: Front End Web\n" + "Employer: LaunchCode\n" + "Location: Saint Louis\n" + "Position Type: Entry Level\n" + "Core Competency: Persistence\n", job6.toString());
-    Assert.assertEquals("\nID: 7\n" + "Name: Front End Web\n" + "Employer: LaunchCode\n" + "Location: Saint Louis\n" + "Position Type: Entry Level\n" + "Core Competency: Persistence\n", job6.toString());
-    Assert.assertEquals("\nID: 22\n" + "Name: Front End Web\n" + "Employer: LaunchCode\n" + "Location: Data not available\n" + "Position Type: Entry Level\n" + "Core Competency: Persistence\n", job9.toString());
+    Assert.assertNotEquals("\nID: \" + id + \"\\n\" +\n" +
+            "              \"Name: \" + name + \"\\n\" +\n" +
+            "              \"Employer: \" + employer.getValue() + \"\\n\" +\n" +
+            "              \"Location: \" + location.getValue() + \"\\n\" +\n" +
+            "              \"Position Type: \" + positionType.getValue() + \"\\n\" +\n" +
+            "              \"Core Competency: \" + coreCompetency.getValue() + \"\n", job6.toString());
+
     }
 
 }
